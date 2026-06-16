@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.success-container{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.success-card{
+    width:100%;
+    max-width:500px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.25);
+
+    animation:successFade .5s ease;
+}
+
+/* CHECKMARK */
+
+.success-icon{
+    width:90px;
+    height:90px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#9ACD32;
+
+    color:black;
+
+    font-size:3rem;
+    font-weight:700;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 0 25px rgba(154,205,50,.4);
+}
+
+/* LOGO */
+
+.success-logo{
+    font-size:2.7rem;
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.success-logo .get{
+    color:white;
+}
+
+.success-logo .cylinder{
+    color:#9ACD32;
+
+    text-shadow:
+        0 0 15px rgba(154,205,50,.4);
+}
+
+/* TITLE */
+
+.success-title{
+    color:white;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.success-text{
+    color:rgba(255,255,255,.85);
+    line-height:1.7;
+}
+
+.success-text.secondary{
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.home-btn{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:999px;
+
+    background:#9ACD32;
+
+    color:black;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.home-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(154,205,50,.45);
+}
+
+/* ANIMATION */
+
+@keyframes successFade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .success-card{
+        padding:30px 20px;
+    }
+
+    .success-logo{
+        font-size:2.2rem;
+    }
+
+    .success-icon{
+        width:75px;
+        height:75px;
+        font-size:2.5rem;
+    }
+}

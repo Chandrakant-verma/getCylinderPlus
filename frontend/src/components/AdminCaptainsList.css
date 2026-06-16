@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.captains-page{
+    min-height:100vh;
+
+    background-image:url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+    padding:40px 20px;
+}
+
+.captains-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.25)
+      );
+
+    backdrop-filter:blur(3px);
+}
+
+.captains-content{
+    position:relative;
+    z-index:10;
+
+    max-width:1200px;
+    margin:auto;
+}
+
+.captains-title{
+    text-align:center;
+
+    color:white;
+
+    font-size:2.8rem;
+    font-weight:700;
+}
+
+.captains-subtitle{
+    text-align:center;
+
+    color:rgba(255,255,255,.75);
+
+    margin-top:10px;
+    margin-bottom:40px;
+}
+
+.branch-section{
+    margin-bottom:40px;
+}
+
+.branch-title{
+    color:#9ACD32;
+
+    font-size:1.8rem;
+
+    margin-bottom:20px;
+
+    text-shadow:
+      0 0 15px rgba(154,205,50,.4);
+}
+
+.captains-grid{
+    display:grid;
+
+    grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+}
+
+.captain-card{
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    color:white;
+
+    transition:.3s ease;
+}
+
+.captain-card:hover{
+    transform:translateY(-5px);
+
+    border-color:#9ACD32;
+
+    box-shadow:
+      0 0 25px rgba(154,205,50,.25);
+}
+
+.captain-card h3{
+    color:#9ACD32;
+
+    margin-bottom:15px;
+}
+
+.captain-card p{
+    margin-bottom:10px;
+
+    color:rgba(255,255,255,.85);
+
+    word-break:break-word;
+}
+
+.loading-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background-image: url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loading-card {
+  width: 100%;
+  max-width: 420px;
+
+  text-align: center;
+
+  padding: 40px 30px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.loading-card h2 {
+  color: white;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.loading-card p {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 0.95rem;
+}
+
+.loading-icon img {
+  width: 110px;
+  height: auto;
+
+  animation: truckBounce 1.8s infinite;
+}
+
+@keyframes truckBounce {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media(max-width:768px){
+
+    .captains-title{
+        font-size:2rem;
+    }
+
+    .branch-title{
+        font-size:1.4rem;
+    }
+
+    .captain-card{
+        padding:16px;
+    }
+}

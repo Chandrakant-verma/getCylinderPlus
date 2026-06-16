@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.analyze-page{
+    min-height:100vh;
+
+    background-image:url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+    padding:40px 20px;
+}
+
+.analyze-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.25)
+        );
+
+    backdrop-filter:blur(4px);
+}
+
+.analyze-content{
+    position:relative;
+    z-index:10;
+
+    max-width:1000px;
+    margin:auto;
+}
+
+.analyze-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.analyze-header h1{
+    color:white;
+
+    font-size:2.8rem;
+    font-weight:700;
+}
+
+.analyze-header p{
+    color:rgba(255,255,255,.75);
+
+    margin-top:10px;
+}
+
+.insights-section,
+.question-section{
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+}
+
+.analyze-btn,
+.ask-btn{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+    outline:none;
+
+    border-radius:999px;
+
+    background:#9ACD32;
+
+    color:black;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.analyze-btn:hover,
+.ask-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(154,205,50,.45);
+}
+
+.question-section h2{
+    color:white;
+
+    margin-bottom:15px;
+}
+
+.question-section textarea{
+    width:100%;
+
+    min-height:140px;
+
+    resize:vertical;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    outline:none;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:.95rem;
+}
+
+.question-section textarea::placeholder{
+    color:rgba(255,255,255,.5);
+}
+
+.question-section textarea:focus{
+    border-color:#9ACD32;
+
+    box-shadow:
+        0 0 15px rgba(154,205,50,.25);
+}
+
+.result-card{
+    margin-top:25px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:20px;
+}
+
+.result-card h2{
+    color:#9ACD32;
+
+    margin-bottom:15px;
+}
+
+.result-card pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+
+    color:white;
+
+    line-height:1.7;
+
+    font-size:.95rem;
+}
+
+@media(max-width:768px){
+
+    .analyze-header h1{
+        font-size:2rem;
+    }
+
+    .insights-section,
+    .question-section{
+        padding:18px;
+    }
+}

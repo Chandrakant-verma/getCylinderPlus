@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.admin-home-container{
+    width:100%;
+    min-height:100vh;
+
+    background-image:url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px 120px;
+}
+
+.admin-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.25)
+    );
+
+    backdrop-filter:blur(4px);
+}
+
+.admin-content{
+    position:relative;
+    z-index:10;
+
+    width:100%;
+    max-width:950px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:
+    0 8px 40px rgba(0,0,0,.35);
+}
+
+.admin-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.admin-header h1{
+    color:white;
+    font-size:2.4rem;
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+.admin-header p{
+    color:rgba(255,255,255,.75);
+    font-size:1rem;
+}
+
+/* ===========================
+   MAIN BUTTONS
+=========================== */
+
+.admin-main-buttons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+
+    margin-bottom:25px;
+}
+
+.admin-main-btn{
+    padding:16px;
+
+    border:none;
+    outline:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.admin-main-btn:hover{
+    background:#9ACD32;
+    color:black;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(154,205,50,.35);
+}
+
+/* ===========================
+   DASHBOARD LINKS CARD
+=========================== */
+
+.admin-actions-card{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.dashboard-link{
+    text-decoration:none;
+
+    text-align:center;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    color:white;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.dashboard-link:hover{
+    background:#9ACD32;
+
+    color:black;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(154,205,50,.35);
+}
+
+/* ===========================
+   PRICE SECTION
+=========================== */
+
+.admin-price-card{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:20px;
+}
+
+.admin-price-card h2{
+    color:white;
+    text-align:center;
+}
+
+.admin-price-card input{
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    outline:none;
+}
+
+.admin-price-card input:focus{
+    border-color:#9ACD32;
+
+    box-shadow:
+    0 0 15px rgba(154,205,50,.25);
+}
+
+.admin-price-card button{
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:999px;
+
+    background:#9ACD32;
+
+    color:black;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.admin-price-card button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 25px rgba(154,205,50,.4);
+}
+
+/* ===========================
+   BRANCH FORM
+=========================== */
+
+.branch-form{
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.branch-form h2{
+    color:white;
+    text-align:center;
+}
+
+.branch-form input{
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    outline:none;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+}
+
+.branch-form input::placeholder{
+    color:rgba(255,255,255,.55);
+}
+
+.branch-form input:focus{
+    border-color:#9ACD32;
+
+    box-shadow:
+    0 0 15px rgba(154,205,50,.25);
+}
+
+/* ===========================
+   AUTOCOMPLETE
+=========================== */
+
+.autocomplete-wrapper{
+    position:relative;
+    width:100%;
+}
+
+.suggestions-box{
+    position:absolute;
+
+    top:100%;
+    left:0;
+    right:0;
+
+    margin-top:8px;
+
+    max-height:220px;
+    overflow-y:auto;
+
+    background:rgba(20,20,20,.92);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 12px 40px rgba(0,0,0,.45);
+
+    z-index:999;
+}
+
+.suggestion-item{
+    padding:14px 18px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.suggestion-item:last-child{
+    border-bottom:none;
+}
+
+.suggestion-item:hover{
+    background:rgba(154,205,50,.25);
+
+    padding-left:24px;
+}
+
+/* ===========================
+   CREATE BUTTON
+=========================== */
+
+.create-branch-btn{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+    outline:none;
+
+    border-radius:999px;
+
+    background:#9ACD32;
+
+    color:black;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.create-branch-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 25px rgba(154,205,50,.45);
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+.suggestions-box::-webkit-scrollbar{
+    width:6px;
+}
+
+.suggestions-box::-webkit-scrollbar-thumb{
+    background:rgba(154,205,50,.5);
+    border-radius:999px;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    .admin-content{
+        padding:25px 18px;
+    }
+
+    .admin-header h1{
+        font-size:1.9rem;
+    }
+
+    .admin-main-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .admin-actions-card{
+        grid-template-columns:1fr;
+    }
+}
