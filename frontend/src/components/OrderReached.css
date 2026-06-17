@@ -1,208 +1,222 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.reached-container{
-    width:100%;
-    min-height:100vh;
+.reached-container {
+  min-height: 100vh;
+  width: 100%;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    padding:20px;
+  padding: 20px;
+
+  background-image: url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
 }
 
-.reached-card{
-    width:100%;
-    max-width:500px;
+.reached-container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
 
-    background:rgba(255,255,255,.08);
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.45)
+  );
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    border-radius:30px;
-
-    padding:30px;
-
-    box-shadow:
-      0 8px 32px rgba(0,0,0,.25);
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* LOGO */
+/* ───────────── Card ───────────── */
 
-.reached-logo{
-    text-align:center;
+.reached-card {
+  position: relative;
+  z-index: 2;
 
-    font-size:2.5rem;
-    font-weight:700;
+  width: 100%;
+  max-width: 500px;
 
-    margin-bottom:15px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+
+  padding: 32px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  animation: fadeUp 0.4s ease;
 }
 
-.reached-logo .get{
-    color:white;
+/* ───────────── Logo ───────────── */
+
+.reached-logo {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.reached-logo .cylinder{
-    color:#9ACD32;
-
-    text-shadow:
-      0 0 15px rgba(154,205,50,.4);
+.reached-logo .get {
+  color: white;
 }
 
-/* TITLE */
-
-.reached-title{
-    color:white;
-    text-align:center;
-
-    margin-bottom:10px;
+.reached-logo .cylinder {
+  color: #9acd32;
+  text-shadow: 0 0 15px rgba(154, 205, 50, 0.4);
 }
 
-.reached-subtitle{
-    color:rgba(255,255,255,.75);
+/* ───────────── Heading ───────────── */
 
-    text-align:center;
-
-    margin-bottom:30px;
+.reached-title {
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-/* INPUT */
-
-.reached-field{
-    margin-bottom:25px;
+.reached-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
 }
 
-.reached-field label{
-    display:block;
+/* ───────────── Field ───────────── */
 
-    color:white;
-
-    margin-bottom:8px;
-
-    font-weight:500;
+.reached-field {
+  margin-bottom: 24px;
 }
 
-.reached-field input{
-    width:100%;
+.reached-field label {
+  display: block;
+  margin-bottom: 8px;
 
-    padding:14px 16px;
-
-    border:none;
-    outline:none;
-
-    border-radius:14px;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    color:white;
-
-    font-size:1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-.reached-field input:focus{
-    border-color:#9ACD32;
+.reached-field input {
+  width: 100%;
 
-    box-shadow:
-      0 0 15px rgba(154,205,50,.3);
+  padding: 15px 18px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 3px;
+
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-/* PAYMENT */
-
-.payment-section{
-    display:flex;
-    gap:15px;
-
-    margin-bottom:25px;
+.reached-field input:focus {
+  border-color: rgba(154, 205, 50, 0.6);
+  box-shadow: 0 0 0 3px rgba(154, 205, 50, 0.15);
 }
 
-.radio-card{
-    flex:1;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    gap:10px;
-
-    padding:16px;
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.06);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    color:white;
-
-    cursor:pointer;
+.reached-field input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: normal;
 }
 
-.radio-card input{
-    accent-color:#9ACD32;
+/* ───────────── Button ───────────── */
+
+.complete-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #9acd32,
+    #7cb342
+  );
+
+  color: #111;
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 20px rgba(154, 205, 50, 0.25);
 }
 
-/* BUTTON */
+.complete-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
 
-.complete-btn{
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-    outline:none;
-
-    border-radius:999px;
-
-    background:#9ACD32;
-
-    color:black;
-
-    font-weight:700;
-
-    font-size:1rem;
-
-    cursor:pointer;
-
-    transition:.3s ease;
+  box-shadow: 0 0 25px rgba(154, 205, 50, 0.55);
 }
 
-.complete-btn:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-      0 0 20px rgba(154,205,50,.4);
+.complete-btn:active {
+  transform: scale(0.98);
 }
 
-.complete-btn:disabled{
-    opacity:.6;
-    cursor:not-allowed;
+.complete-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
-/* MOBILE */
+/* ───────────── Animation ───────────── */
 
-@media(max-width:768px){
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
 
-    .reached-card{
-        padding:24px;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .reached-logo{
-        font-size:2rem;
-    }
+/* ───────────── Mobile ───────────── */
 
-    .payment-section{
-        flex-direction:column;
-    }
+@media (max-width: 480px) {
+  .reached-card {
+    padding: 24px;
+  }
+
+  .reached-logo {
+    font-size: 2rem;
+  }
+
+  .reached-title {
+    font-size: 1.1rem;
+  }
+
+  .reached-subtitle {
+    font-size: 0.85rem;
+  }
 }

@@ -112,7 +112,7 @@ const LiveTracking = () => {
     // };
 
     socket.on("otp_verified", () => {
-      navigate("/users/payment");
+      navigate("/users/home");
     });
 
     socket.on("locaton_update_from_captain_throught_server", locationHandler);

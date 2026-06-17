@@ -115,12 +115,6 @@ const Payment = () => {
 
         <div className="order-details">
           <div className="detail-row">
-            <span>Name</span>
-            <strong>
-              {order.user?.firstName} {order.user?.lastName}
-            </strong>
-          </div>
-          <div className="detail-row">
             <span>Total Amount</span>
             <strong>₹{order.totalAmount}</strong>
           </div>

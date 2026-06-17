@@ -49,7 +49,7 @@ const UserHome = () => {
 
         setOrder(orderToShow);
       });
-  }, []);
+  }, [socket, order]);
 
   useEffect(() => {
     if (!user?._id) return;

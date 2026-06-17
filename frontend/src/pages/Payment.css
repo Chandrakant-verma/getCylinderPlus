@@ -1,18 +1,20 @@
-.payment-wrapper {
+.payment-wrapper,
+.manage-order-container,
+.user-order-container {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
+  inset: 0;
+
   display: flex;
   justify-content: center;
-  padding: 20px;
-  padding-bottom: 30px;
-}
+  align-items: center;
 
+  padding: 20px;
+  z-index: 20;
+}
 .payment-card {
   width: 100%;
   max-width: 500px;
+
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -20,8 +22,19 @@
   border-radius: 28px;
   padding: 28px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
   animation: slideUp 0.4s ease;
+
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
+
+.payment-card::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Logo ─────────────────────────────────────────── */
 
 .payment-logo {
   text-align: center;
@@ -30,12 +43,14 @@
   margin-bottom: 6px;
 }
 
-.payment-logo .get { color: white; }
+.payment-logo .get    { color: white; }
 
 .payment-logo .cylinder {
-  color: #9ACD32;
+  color: #9acd32;
   text-shadow: 0 0 15px rgba(154, 205, 50, 0.4);
 }
+
+/* ── Title ────────────────────────────────────────── */
 
 .payment-title {
   color: white;
@@ -44,6 +59,8 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
+
+/* ── Order rows ───────────────────────────────────── */
 
 .order-details {
   display: flex;
@@ -74,13 +91,15 @@
   max-width: 60%;
 }
 
+/* ── Pay button ───────────────────────────────────── */
+
 .pay-btn {
   width: 100%;
   padding: 15px;
   border: none;
   outline: none;
   border-radius: 999px;
-  background: linear-gradient(135deg, #9ACD32, #7CB342);
+  background: linear-gradient(135deg, #9acd32, #7cb342);
   color: #111;
   font-size: 1rem;
   font-weight: 700;
@@ -101,12 +120,16 @@
   transform: none;
 }
 
+/* ── Animation ────────────────────────────────────── */
+
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Mobile ───────────────────────────────────────── */
+
 @media (max-width: 480px) {
-  .payment-card { padding: 20px; }
-  .payment-logo { font-size: 1.9rem; }
+  .payment-card  { padding: 20px; }
+  .payment-logo  { font-size: 1.9rem; }
 }

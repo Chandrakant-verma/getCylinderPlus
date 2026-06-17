@@ -144,18 +144,7 @@ const CaptainHome = () => {
           </div>
         </div>
 
-        {/* Delivery Flow */}
-        {/* <div className="delivery-stage">
-          {deliveryStage === "tracking" && currentOrder && (
-            <LiveTrackForCaptain />
-          )}
-
-          {deliveryStage === "reached" && currentOrder && <OrderReached />}
-
-          {deliveryStage === "waiting-payment" && <WaitingPayment />}
-
-          {deliveryStage === "successful" && <Successful />}
-        </div> */}
+  
 
         {/* Orders */}
         <h2 className="orders-title">Orders Assigned To Your Branch</h2>

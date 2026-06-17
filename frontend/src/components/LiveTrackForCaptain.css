@@ -1,31 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
 .captain-tracking-page {
-  width: 100%;
   min-height: 100vh;
-  background: #111;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  width: 100%;
+
+  background-image: url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 25px;
+  position: relative;
 }
 
-/* HEADER */
+.captain-tracking-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ───────────────── Header ───────────────── */
 
 .captain-tracking-header {
+  position: relative;
+  z-index: 2;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .captain-tracking-logo {
   font-size: 2.5rem;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .captain-tracking-logo .get {
@@ -33,85 +52,144 @@
 }
 
 .captain-tracking-logo .cylinder {
-  color: #9ACD32;
+  color: #9acd32;
   text-shadow: 0 0 15px rgba(154, 205, 50, 0.4);
 }
 
 .captain-tracking-header p {
   color: rgba(255, 255, 255, 0.8);
-  margin-top: 8px;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
+  font-size: 1rem;
 }
 
-/* MAP */
+/* ───────────────── Map Card ───────────────── */
 
 .captain-map-container {
+  position: relative;
+  z-index: 2;
+
   width: 100%;
-  height: 600px;
-  border-radius: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(154, 205, 50, 0.15);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  animation: fadeUp 0.4s ease;
 }
 
-/* BUTTON */
+/* Google map corners */
+.captain-map-container > div {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* ───────────────── Button Area ───────────────── */
 
 .reached-section {
-  width: 100%;
+  position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  padding-bottom: 20px;
+
+  margin-top: 25px;
 }
 
 .reached-btn {
-  width: 100%;
-  max-width: 420px;
-  padding: 16px 24px;
   border: none;
   outline: none;
+
+  min-width: 260px;
+  padding: 16px 28px;
+
   border-radius: 999px;
-  background: linear-gradient(135deg, #9ACD32, #7CB342);
+
+  background: linear-gradient(
+    135deg,
+    #9acd32,
+    #7cb342
+  );
+
   color: #111;
   font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(154, 205, 50, 0.25);
-  letter-spacing: 0.5px;
-}
 
-.reached-btn::before {
-  content: "✓";
-  margin-right: 8px;
-  font-weight: 900;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 20px rgba(154, 205, 50, 0.25);
 }
 
 .reached-btn:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 0 25px rgba(154, 205, 50, 0.5),
-    0 10px 30px rgba(154, 205, 50, 0.25);
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 25px rgba(154, 205, 50, 0.55);
 }
 
 .reached-btn:active {
   transform: scale(0.98);
 }
 
+/* ───────────────── Animation ───────────────── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ───────────────── Mobile ───────────────── */
+
 @media (max-width: 768px) {
+  .captain-tracking-page {
+    padding: 15px;
+  }
+
   .captain-tracking-logo {
     font-size: 2rem;
   }
 
   .captain-map-container {
-    height: 420px;
+    border-radius: 22px;
+  }
+
+  .captain-map-container > div {
+    border-radius: 22px;
   }
 
   .reached-btn {
-    max-width: 100%;
-    padding: 15px;
-    font-size: 0.95rem;
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .captain-tracking-logo {
+    font-size: 1.8rem;
+  }
+
+  .captain-tracking-header p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .captain-tracking-page {
+    padding-bottom: 120px;
   }
 }

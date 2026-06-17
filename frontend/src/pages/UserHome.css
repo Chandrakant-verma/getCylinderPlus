@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,14 +16,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  /* ✅ removed overflow:hidden — it was clipping fixed children */
   position: relative;
-  overflow: hidden;
 }
 
 .home-overlay {
-  position: absolute;
+  position: fixed; /* ✅ fixed so it covers the full viewport always */
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.45));
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45));
   z-index: 1;
   pointer-events: none;
 }
@@ -41,11 +44,3 @@
   font-weight: 500;
 }
 
-.manage-order-panel,
-.zero-order-panel,
-.payment-panel {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 20;
-}

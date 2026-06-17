@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.waiting-payment {
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: calc(100% - 30px);
+  max-width: 500px;
+
+  z-index: 20;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  animation: slideUp 0.4s ease;
+}
+
+.waiting-payment h2 {
+  color: #9acd32;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+
+  text-shadow: 0 0 15px rgba(154, 205, 50, 0.3);
+}
+
+.waiting-payment p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.waiting-payment::before {
+  content: "";
+  display: block;
+
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  border: 4px solid rgba(154, 205, 50, 0.25);
+  border-top-color: #9acd32;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .waiting-payment {
+    padding: 24px 20px;
+    bottom: 85px;
+  }
+
+  .waiting-payment h2 {
+    font-size: 1.3rem;
+  }
+
+  .waiting-payment p {
+    font-size: 0.95rem;
+  }
+}
+.waiting-payment-page {
+  min-height: 100vh;
+  width: 100%;
+
+  background-image: url("https://res.cloudinary.com/dftacepnw/image/upload/v1781194699/ChatGPT_Image_Jun_11_2026_09_47_35_PM_nmyiov.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.waiting-payment-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.45)
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
