@@ -836,13 +836,3 @@ Socket.IO event "payment_completed" → sent to User & Captain
 
 ---
 
-## 👨‍💻 Author
-
-**Chandrakant Verma**
-B.Tech, Information Technology — National Institute of Technology, Raipur
-
----
-
-## 📄 License
-
-MIT License
