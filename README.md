@@ -1,4 +1,4 @@
-# 🔥 getCylinder
+#  getCylinder
 
 > **A Real-Time LPG Cylinder Booking & Delivery Platform**
 
@@ -6,15 +6,15 @@ getCylinder is a full-stack MERN application that connects **customers**, **deli
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Booking an LPG cylinder traditionally involves phone calls, manual record keeping, and no visibility into delivery status. getCylinder solves this by digitizing the entire flow — from booking to live tracking to payment — while giving the business owner AI-driven insights into orders, revenue, and growth trends.
 
 ---
 
-## ✨ Features
+##  Features
 
-### 👤 User
+###  User
 - Register / Login (JWT-based auth)
 - Automatic **nearest branch assignment** based on address (via Google Maps Distance Matrix)
 - Book a cylinder order
@@ -25,14 +25,14 @@ Booking an LPG cylinder traditionally involves phone calls, manual record keepin
 - Pay via Razorpay after delivery
 - Real-time notifications (Socket.IO)
 
-### 🚚 Captain (Delivery Agent)
+###  Captain (Delivery Agent)
 - Register / Login
 - View orders assigned to their branch
 - Verify delivery OTP
 - Real-time location sharing during delivery
 - Get notified instantly once payment is completed
 
-### 🛠 Admin
+###  Admin
 - Login
 - View all users, captains, and orders
 - Add new branches
@@ -40,24 +40,24 @@ Booking an LPG cylinder traditionally involves phone calls, manual record keepin
 - **AI Business Insights** — auto-generated summary of revenue, order trends, and risks
 - **Ask Analytics** — ask natural-language questions about business data and get AI answers
 
-### 🗺 Maps
+###  Maps
 - Address → Coordinates (Geocoding)
 - Distance & time between two points
 - Autocomplete address suggestions
 - Coordinates → Address (Reverse Geocoding)
 
-### 💳 Payments
+###  Payments
 - Razorpay order creation
 - Signature verification
 - Automatic order status update on successful payment
 
-### 🔔 Real-Time (Socket.IO)
+###  Real-Time (Socket.IO)
 - Live location updates
 - Instant payment confirmation to both user and captain
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 **Frontend:** React 19, React Router, Axios, Socket.IO Client, GSAP, @react-google-maps/api, React Icons
 
@@ -69,7 +69,7 @@ Booking an LPG cylinder traditionally involves phone calls, manual record keepin
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 getCylinder/
@@ -108,7 +108,7 @@ getCylinder/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### Prerequisites
 - Node.js (v18+)
@@ -131,7 +131,7 @@ npm install
 
 ---
 
-## 🔐 Environment Variables
+##  Environment Variables
 
 ### Backend `.env`
 ```env
@@ -156,7 +156,7 @@ VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 
 ---
 
-## ▶️ Running the Project
+##  Running the Project
 
 ```bash
 # Backend
@@ -170,7 +170,7 @@ npm run dev
 
 ---
 
-## 🌐 High-Level Flow
+##  High-Level Flow
 
 ```
 User Registers
@@ -202,7 +202,7 @@ Real-time notification to User & Captain
 
 ---
 
-## 🔒 Authentication
+##  Authentication
 
 All protected routes require a JWT, sent either as a cookie (`token`) or as a Bearer token:
 
@@ -214,13 +214,13 @@ There are three separate auth middlewares: `authUser`, `authCaptain`, and `authA
 
 ---
 
-# 📖 API Documentation
+#  API Documentation
 
 Base URL: `http://localhost:5000`
 
 ---
 
-## 🧑 User Routes — `/users`
+##  User Routes — `/users`
 
 ### `POST /users/register`
 Registers a new user and auto-assigns the nearest branch.
@@ -290,7 +290,7 @@ Registers a new user and auto-assigns the nearest branch.
 
 ---
 
-### `GET /users/profile` 🔒 (authUser)
+### `GET /users/profile`  (authUser)
 **Success — 200**
 ```json
 {
@@ -303,7 +303,7 @@ Registers a new user and auto-assigns the nearest branch.
 
 ---
 
-### `POST /users/logout` 🔒
+### `POST /users/logout` 
 **Success — 200**
 ```json
 { "message": "Logged out" }
@@ -311,7 +311,7 @@ Registers a new user and auto-assigns the nearest branch.
 
 ---
 
-### `POST /users/orders` 🔒
+### `POST /users/orders` 
 Creates a new order with an auto-generated 6-digit delivery OTP.
 
 **Request Body**
@@ -342,7 +342,7 @@ Creates a new order with an auto-generated 6-digit delivery OTP.
 
 ---
 
-### `GET /users/orders` 🔒
+### `GET /users/orders` 
 **Success — 200**
 ```json
 {
@@ -359,7 +359,7 @@ Creates a new order with an auto-generated 6-digit delivery OTP.
 
 ---
 
-### `GET /users/orders/cancel` 🔒
+### `GET /users/orders/cancel` 
 **Success — 200**
 ```json
 {
@@ -375,7 +375,7 @@ Creates a new order with an auto-generated 6-digit delivery OTP.
 
 ---
 
-### `GET /users/price` 🔒
+### `GET /users/price` 
 **Success — 200**
 ```json
 { "price": 850 }
@@ -383,7 +383,7 @@ Creates a new order with an auto-generated 6-digit delivery OTP.
 
 ---
 
-### `GET /users/get-otp` 🔒
+### `GET /users/get-otp` 
 Returns the OTP for the user's currently pending order.
 
 **Success — 200**
@@ -393,7 +393,7 @@ Returns the OTP for the user's currently pending order.
 
 ---
 
-### `POST /users/create-order` 🔒
+### `POST /users/create-order` 
 Creates a Razorpay order once the captain has marked the delivery as **reached**.
 
 **Success — 200**
@@ -413,7 +413,7 @@ Creates a Razorpay order once the captain has marked the delivery as **reached**
 
 ---
 
-### `POST /users/verify` 🔒
+### `POST /users/verify` 
 Verifies the Razorpay payment signature.
 
 **Request Body**
@@ -437,12 +437,12 @@ Verifies the Razorpay payment signature.
 
 ---
 
-### `DELETE /users/delete` 🔒
+### `DELETE /users/delete` 
 Deletes the current user account.
 
 ---
 
-## 🚚 Captain Routes — `/captains`
+## Captain Routes — `/captains`
 
 ### `POST /captains/register`
 **Request Body**
@@ -491,7 +491,7 @@ Deletes the current user account.
 
 ---
 
-### `GET /captains/profile` 🔒 (authCaptain)
+### `GET /captains/profile`  (authCaptain)
 **Success — 200**
 ```json
 { "captain": { "_id": "66f3...", "email": "ravi@example.com" } }
@@ -499,7 +499,7 @@ Deletes the current user account.
 
 ---
 
-### `POST /captains/logout` 🔒
+### `POST /captains/logout` 
 **Success — 200**
 ```json
 { "message": "Logout successfully" }
@@ -507,7 +507,7 @@ Deletes the current user account.
 
 ---
 
-### `GET /captains/assigned-orders` 🔒
+### `GET /captains/assigned-orders` 
 Returns orders belonging to the captain's branch that are pending, or reached but not yet paid.
 
 **Success — 200**
@@ -526,7 +526,7 @@ Returns orders belonging to the captain's branch that are pending, or reached bu
 
 ---
 
-### `POST /captains/verifyOtp` 🔒
+### `POST /captains/verifyOtp` 
 **Request Body**
 ```json
 { "orderId": "66f2...", "otp": "482913" }
@@ -568,7 +568,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-## 🛠 Admin Routes — `/admins`
+##  Admin Routes — `/admins`
 
 ### `POST /admins/login`
 **Request Body**
@@ -588,7 +588,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-### `GET /admins/profile` 🔒 (authAdmin)
+### `GET /admins/profile`  (authAdmin)
 **Success — 200**
 ```json
 { "_id": "66f4...", "email": "admin@getcylinder.com" }
@@ -596,7 +596,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-### `GET /admins/users` 🔒
+### `GET /admins/users` 
 **Success — 200**
 ```json
 [
@@ -611,7 +611,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-### `GET /admins/captains` 🔒
+### `GET /admins/captains` 
 **Success — 200**
 ```json
 [
@@ -625,7 +625,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-### `GET /admins/orders` 🔒
+### `GET /admins/orders` 
 **Success — 200**
 ```json
 [
@@ -642,7 +642,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-### `POST /admins/branches` 🔒
+### `POST /admins/branches` 
 **Request Body**
 ```json
 {
@@ -667,7 +667,7 @@ No auth required. Used during captain signup to populate the branch dropdown.
 
 ---
 
-### `GET /admins/getBusinessInsights` 🔒
+### `GET /admins/getBusinessInsights` 
 Aggregates order data and asks an LLM (via HuggingFace) to summarize business health.
 
 **Success — 200**
@@ -679,7 +679,7 @@ Aggregates order data and asks an LLM (via HuggingFace) to summarize business he
 
 ---
 
-### `POST /admins/askAnalytics` 🔒
+### `POST /admins/askAnalytics` 
 Ask a natural-language question about the business; answered using live order/branch data as context.
 
 **Request Body**
@@ -701,7 +701,7 @@ Ask a natural-language question about the business; answered using live order/br
 
 ---
 
-### `GET /admins/setPrice` 🔒
+### `GET /admins/setPrice` 
 **Query Params:** `?price=880`
 
 **Success — 200**
@@ -718,7 +718,7 @@ Ask a natural-language question about the business; answered using live order/br
 
 ## 🗺 Maps Routes — `/maps`
 
-### `GET /maps/get-coordinates` 🔒 (authUser)
+### `GET /maps/get-coordinates`  (authUser)
 **Query:** `?address=MG Road, Raipur`
 
 **Success — 200**
@@ -733,7 +733,7 @@ Ask a natural-language question about the business; answered using live order/br
 
 ---
 
-### `GET /maps/get-distance-time` 🔒
+### `GET /maps/get-distance-time` 
 **Query:** `?origin=MG Road, Raipur&destination=Shankar Nagar, Raipur`
 
 **Success — 200**
@@ -746,7 +746,7 @@ Ask a natural-language question about the business; answered using live order/br
 
 ---
 
-### `GET /maps/get-suggestions` 🔒
+### `GET /maps/get-suggestions` 
 **Query:** `?input=MG Ro`
 
 **Success — 200**
@@ -769,7 +769,7 @@ Ask a natural-language question about the business; answered using live order/br
 
 ---
 
-## 💳 Payment Flow (Razorpay)
+##  Payment Flow (Razorpay)
 
 ```
 Captain verifies delivery OTP
@@ -801,7 +801,7 @@ Socket.IO event "payment_completed" → sent to User & Captain
 
 ---
 
-## 🔔 Socket.IO Events
+##  Socket.IO Events
 
 | Event | Emitted By | Payload | Purpose |
 |---|---|---|---|
@@ -825,7 +825,7 @@ Socket.IO event "payment_completed" → sent to User & Captain
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 - OTP delivery via SMS/WhatsApp instead of in-app display
 - Captain live-location persistence in DB for delivery analytics
