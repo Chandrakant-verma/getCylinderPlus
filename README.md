@@ -812,7 +812,7 @@ Socket.IO event "payment_completed" → sent to User & Captain
 
 ---
 
-## 🗄 Database Models (Overview)
+## Database Models (Overview)
 
 | Model | Key Fields |
 |---|---|
