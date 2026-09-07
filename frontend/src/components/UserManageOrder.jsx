@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { OrderDataContext } from "../contexts/OrderContext";
 import { SocketContext } from "../contexts/SocketContext";
+import { UserDataContext } from "../contexts/UserContxt";
 import LiveTrack from "./LiveTrackForUser";
 import { Link } from "react-router-dom";
 import "./UserManageOrder.css";
@@ -9,6 +10,7 @@ import "./UserManageOrder.css";
 const UserManageOrder = () => {
   const { socket } = useContext(SocketContext);
   const { order, setOrder } = useContext(OrderDataContext);
+  const { user, setUser} = useContext(UserDataContext);
   const navigate = useNavigate();
 
   const handleTrackOrder = () => {
@@ -48,7 +50,7 @@ const UserManageOrder = () => {
         <div className="order-details">
           <div className="detail-row">
             <span>Name</span>
-            <strong>{order.user}</strong>
+            <strong>{user.name.firstName}</strong>
           </div>
 
           <div className="detail-row">

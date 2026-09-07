@@ -16,8 +16,8 @@ function initializeSocket(server) {
     console.log(`Client connected: ${socket.id}`);
 
     socket.on("join", async (data) => {
-      console.log("JOIN RECEIVED:", data);
-      console.log("SOCKET ID:", socket.id);
+      // console.log("JOIN RECEIVED:", data);
+      // console.log("SOCKET ID:", socket.id);
 
       const { userId, userType } = data;
 
@@ -28,7 +28,7 @@ function initializeSocket(server) {
           { new: true },
         );
 
-        console.log("USER UPDATED:", updated?.socketId);
+        //console.log("USER UPDATED:", updated?.socketId);
       }
 
       if (userType === "captain") {
@@ -38,7 +38,7 @@ function initializeSocket(server) {
           { new: true },
         );
 
-        console.log("CAPTAIN UPDATED:", updated?.socketId);
+        //console.log("CAPTAIN UPDATED:", updated?.socketId);
       }
     });
 
@@ -80,7 +80,7 @@ function initializeSocket(server) {
     });
 
     socket.on("disconnect", () => {
-      console.log(`Client disconnected: ${socket.id}`);
+      //console.log(`Client disconnected: ${socket.id}`);
     });
 
     socket.on("order_made_from_user", async (data) => {
@@ -145,7 +145,7 @@ const sendMessageToSocketId = (socketId, messageObject) => {
   if (io) {
     io.to(socketId).emit(messageObject.event, messageObject.data);
   } else {
-    console.log("Socket.io not initialized.");
+    //console.log("Socket.io not initialized.");
   }
 };
 

@@ -95,7 +95,7 @@ const UserZeroActiveOrder = () => {
         <p className="order-subtitle">Book a new LPG cylinder for delivery.</p>
 
         <div className="order-field">
-          <label>Total Amount</label>
+          <label>Total Amount(in rupees)</label>
 
           <input type="text" value={totalAmount} readOnly />
         </div>
